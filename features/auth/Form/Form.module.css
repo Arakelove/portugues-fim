@@ -1,0 +1,56 @@
+@import url('../../../shared/helpers/fonts/Roboto/stylesheet.css');
+@import url('../../../shared/helpers/fonts/Gilroy/stylesheet.css');
+
+.container {
+	width: clamp(240px, 50%, 480px);
+	background: #FDFDFD;
+	border: none;
+	border-radius: 10px;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	background: whitesmoke;
+	margin: 0 auto;
+	font-family: 'Gilroy', sans-serif;
+}
+
+.form-header {
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 36px;
+	padding: 0;
+	margin: 0;
+	color: #3A98B9;
+}
+
+.submit-button {
+	width: 100%;
+	color: white;
+	background-color: #3A98B9;
+	border: none;
+	padding: 8px;
+	margin-top: 12px;
+	border-radius: 10px;
+	font-family: 'Gilroy', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 36px;
+	letter-spacing: 0.08rem;
+	transition: all ease-in-out .15s;
+}
+
+.submit-button:hover {
+	opacity: .75;
+}
+
+.submit-button:active {
+	background-color: #18607a;
+}
+
+.hint-message {
+	font-size: 0.85rem;
+	text-align: right;
+}

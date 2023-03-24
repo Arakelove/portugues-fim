@@ -1,49 +1,41 @@
-import { Controller } from 'react-hook-form'
+import { useState } from 'react'
 
-import styles from './EmailInput.module.css'
+import styles from '../common.module.css'
 
 interface EmailInputProps {
   label: string
   placeholder: string
-  value?: string
-  name: string
-  control: any
-  rules: any
-  errors: any
-  onChange?(): void
+  error: string
+  handleEmailChange(value: string): void
 }
 
 const EmailInput = ({
   label,
   placeholder,
-  value,
-  name,
-  control,
-  rules,
-  onChange,
-  errors,
+  error,
+  handleEmailChange,
 }: EmailInputProps) => {
+  const [email, setEmail] = useState<string>('')
+
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      <Controller
-        name={name}
-        control={control}
-        defaultValue={value}
-        rules={rules}
-        render={({ field }) => (
-          <input
-            {...field}
-            type='email'
-            onChange={onChange}
-            value={value}
-            name={name}
-            placeholder={placeholder}
-            autoComplete='off'
-          />
-        )}
+    <div className={styles['container']}>
+      <label className={styles['label']} htmlFor='email'>
+        {label}
+      </label>
+      <input
+        className={styles['input']}
+        type='text'
+        value={email}
+        id='email'
+        placeholder={placeholder}
+        onChange={(e) => {
+          const value = e.target.value
+          setEmail(value)
+          handleEmailChange(value)
+        }}
+        autoComplete='off'
       />
-      {errors && <p>{errors.message}</p>}
+      {error && <p className={styles['error-message']}>{error}</p>}
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 
 import { Form } from '@/features/auth'
 
-const SignInPage = () => {
+const SignUpPage = () => {
   const currentPage = useRouter().pathname
   return (
     <>
@@ -11,4 +11,4 @@ const SignInPage = () => {
   )
 }
 
-export default SignInPage
+export default SignUpPage
