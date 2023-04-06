@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
+import {Form} from "../features/auth";
 
-import { Form } from '@/features/auth'
 
 const SignUpPage = () => {
   const currentPage = useRouter().pathname
