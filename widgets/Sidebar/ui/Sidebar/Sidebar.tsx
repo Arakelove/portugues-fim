@@ -6,15 +6,15 @@ import {ThemeSwitcher} from "../../../../shared/ui/ThemeSwitcher";
 interface SidebarProps {
   className?: string;
 }
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar:FC = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
-  console.log(className)
   return (
-    <div
+    <div 
+      data-testid='sidebar'
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
